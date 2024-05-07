@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Comercialización de Libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="imagenes/iconolibro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Encabezado y menú de navegación -->
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-2xl font-bold">Portal de libros</a>
+            <div class="flex items-center">
+                <a href="libros.html" class="ml-4">Libros</a>
+                <a href="autores.html" class="ml-4">Autores</a>
+                <a href="categorias.html" class="ml-4">Categorías</a>
+                <a href="nosotros.html" class="ml-4">Nosotros</a>
+                <a href="contacto.html" class="ml-4">Contacto</a>
+            </div>
+            <div id="userContainer">
+                <!-- Aquí se mostrará el nombre de usuario y el botón de cierre de sesión después de iniciar sesión -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto mt-8 px-4">
+
+        <h1 class="text-3xl font-bold mb-8 text-center">Categorías</h1>
+
+        <!-- Lista de categorías -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+            <!-- Categoría 1 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/ficcion.jpg" alt="Ficción" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Ficción</h2>
+                    <p class="text-gray-600">Novelas, cuentos y obras literarias imaginativas.</p>
+                    <a href="categorias/ficcion.html" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Categoría 2 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/no ficcion.jpg" alt="No Ficción" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">No Ficción</h2>
+                    <p class="text-gray-600">Biografías, ensayos, libros de referencia y más.</p>
+                    <a href="categorias/no-ficcion.html" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Categoría 3 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/infantil.jpg" alt="Infantil" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Infantil</h2>
+                    <p class="text-gray-600">Libros para niños de todas las edades.</p>
+                    <a href="categorias/infantil.html" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Categoría 4 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/romance.jpg" alt="Romance" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Romance</h2>
+                    <p class="text-gray-600">Historias de amor y relaciones.</p>
+                    <a href="categorias/romance.html" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Categoría 5 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/misterio.jpg" alt="Misterio" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Misterio</h2>
+                    <p class="text-gray-600">Intrigas y suspenso.</p>
+                    <a href="categorias/misterio.html" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Categoría 6 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/fantasia.jpg" alt="Fantasía" class="w-full h-40 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Fantasía</h2>
+                    <p class="text-gray-600">Mundos imaginarios y seres extraordinarios.</p>
+                    <a href="categorias/fantasia.html" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+
+    <script>
+        // Verifica si el usuario ha iniciado sesión
+        var usuarioAutenticado = localStorage.getItem('usuarioAutenticado');
+
+        if (usuarioAutenticado === 'true') {
+            // Obtiene el nombre de usuario desde el localStorage
+            var nombreUsuario = localStorage.getItem('nombreUsuario');
+            // Muestra el nombre de usuario y el botón de cierre de sesión
+            var userContainer = document.getElementById('userContainer');
+            userContainer.innerHTML = `
+                <span class="text-gray-300 mr-2">Bienvenido, ${nombreUsuario}</span>
+                <button onclick="cerrarSesion()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                    Cerrar Sesión
+                </button>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros - Comercialización de Libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="imagenes/iconolibro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Encabezado y menú de navegación -->
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-2xl font-bold">Portal de libros</a>
+            <div class="flex space-x-4">
+                <a href="libros.html">Libros</a>
+                <a href="autores.html">Autores</a>
+                <a href="categorias.html">Categorías</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto mt-8 px-4">
+
+        <h1 class="text-3xl font-bold mb-8 text-center">Portal de libros</h1>
+
+        <!-- Lista de libros -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+            <!-- Libro 1 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/Antes-de-diciembre-libro.jpg" alt="Libro 1" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Antes de diciembre</h2>
+                    <p class="text-gray-600">Autor: Joana Marcus</p>
+                    <p class="text-gray-600">Género: Romance</p>
+                    <a href="detallelibro.html?id=1" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Libro 2 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/SIGUE MI VOZ.jpg" alt="Libro 2" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Sigue mi voz</h2>
+                    <p class="text-gray-600">Autor: Ariana Goboy</p>
+                    <p class="text-gray-600">Género: Romance</p>
+                    <a href="detallelibro.html?id=2" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Libro 3 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/BOULEVARD.png" alt="Libro 3" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Boulevad</h2>
+                    <p class="text-gray-600">Autor: Flor M. Salvador</p>
+                    <p class="text-gray-600">Género: Romance</p>
+                    <a href="detallelibro.html?id=3" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+            <!-- Libro 4 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden">
+                <img src="imagenes/las-luces-de-febrero-libro.jpg" alt="Libro 4" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2">Las luces de febrero</h2>
+                    <p class="text-gray-600">Autor: Joana Marcus</p>
+                    <p class="text-gray-600">Género: Misterio</p>
+                    <a href="detallelibro.html?id=4" class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Libro 5 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden ">
+                <img src="imagenes/FABRICANTE DE LAGRIMAS.jpg " alt="Libro 4 " class="w-full h-64 object-cover ">
+                <div class="p-4 ">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2 ">Fabricante de lagrimas</h2>
+                    <p class="text-gray-600 ">Autor: Erin Doom</p>
+                    <p class="text-gray-600 ">Género: Romance</p>
+                    <a href="detallelibro.html?id=4 " class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Libro 6 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden ">
+                <img src="imagenes/7 Maridos de Evelyn.jpg " alt="Libro 4 " class="w-full h-64 object-cover ">
+                <div class="p-4 ">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2 ">Los siete maridos de Evelyn Hugo</h2>
+                    <p class="text-gray-600 ">Autor: Taylor Jenkins</p>
+                    <p class="text-gray-600 ">Género: Misterio</p>
+                    <a href="detallelibro.html?id=4 " class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+            Detalles
+        </a>
+                </div>
+            </div>
+
+            <!-- Libro 7 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden ">
+                <img src="imagenes/ENCUENTRA TU PERSONA VITAMINA.jpg " alt="Libro 4 " class="w-full h-64 object-cover ">
+                <div class="p-4 ">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2 ">Encuentra tu persona vitamina</h2>
+                    <p class="text-gray-600 ">Autor: Marian Rojas Estapé</p>
+                    <p class="text-gray-600 ">Género: Educativo</p>
+                    <a href="detallelibro.html?id=4 " class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+            Detalles
+        </a>
+                </div>
+            </div>
+
+            <!-- Libro 8 -->
+            <div class="bg-purple-100 rounded-lg shadow-md overflow-hidden ">
+                <img src="imagenes/Ana de tejas verdes.jpeg " alt="Libro 4 " class="w-full h-64 object-cover ">
+                <div class="p-4 ">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-2 ">Ana de tejas verdes</h2>
+                    <p class="text-gray-600 ">Autor: Lucy Maud Montgomery</p>
+                    <p class="text-gray-600 ">Género: Infantil</p>
+                    <a href="detallelibro.html?id=4 " class="mt-4 inline-block bg-purple-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
+                        Detalles
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

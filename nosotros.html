@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="imagenes/iconolibro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .background-image {
+            background-image: url('imagenes/fondonosotros.jpg');
+            /* Ruta de la imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            /* Altura igual al 100% de la ventana del navegador */
+            width: 100%;
+            /* Ancho igual al 100% de la ventana del navegador */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .content-container {
+            background-color: rgba(255, 255, 255, 0.5);
+            /* Fondo blanco semi-transparente */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            /* Ancho máximo del contenido */
+            margin: auto;
+            /* Centrar horizontalmente */
+            z-index: 1;
+            /* Asegura que el contenido esté sobre la imagen de fondo */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado y menú de navegación -->
+    <nav class="fixed top-0 left-0 right-0 bg-gray-800 text-white p-4 z-50">
+        <div class="container mx-auto">
+            <div class="flex justify-between">
+                <div>
+                    <a href="index.html" class="text-xl font-bold">Portal de libros</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="libros.html" class="ml-4">Libros</a>
+                    <a href="autores.html" class="ml-4">Autores</a>
+                    <a href="categorias.html" class="ml-4">Categorías</a>
+                    <a href="nosotros.html" class="ml-4">Nosotros</a>
+                    <a href="contacto.html" class="ml-4">Contacto</a>
+                </div>
+                <div id="userContainer">
+                    <!-- Aquí se mostrará el nombre de usuario y el botón de cierre de sesión después de iniciar sesión -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Contenido principal -->
+    <div class="background-image">
+        <div class="content-container">
+            <div class="content">
+                <h1 class="text-3xl font-bold mb-4">Sobre Nosotros</h1>
+
+                <!-- Información sobre la empresa -->
+                <div class="bg-purple-300 rounded-lg shadow-md p-4 mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Nuestra Empresa</h2>
+                    <p class="text-gray-600">Somos una empresa dedicada a la comercialización de libros. Nuestro objetivo es promover la lectura y proporcionar acceso a una amplia variedad de obras literarias para satisfacer los intereses de nuestros clientes.</p>
+                </div>
+
+                <!-- Información sobre el equipo -->
+                <div class="bg-purple-300 rounded-lg shadow-md p-4">
+                    <h2 class="text-xl font-semibold mb-2">Nuestro Equipo</h2>
+                    <p class="text-gray-600">Contamos con un equipo de profesionales apasionados por la literatura y comprometidos con brindar un excelente servicio. Nuestros colaboradores están dispuestos a ayudarte a encontrar el libro perfecto para ti.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+
+    <script>
+        // Verifica si el usuario ha iniciado sesión
+        var usuarioAutenticado = localStorage.getItem('usuarioAutenticado');
+
+        if (usuarioAutenticado === 'true') {
+            // Obtiene el nombre de usuario desde el localStorage
+            var nombreUsuario = localStorage.getItem('nombreUsuario');
+            // Muestra el nombre de usuario y el botón de cierre de sesión
+            var userContainer = document.getElementById('userContainer');
+            userContainer.innerHTML = `
+            <span class="text-gray-300 mr-2">Bienvenido, ${nombreUsuario}</span>
+            <button onclick="cerrarSesion()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                Cerrar Sesión
+            </button>
+        `;
+        }
+    </script>
+
+</body>
+
+</html>
+
+</html>

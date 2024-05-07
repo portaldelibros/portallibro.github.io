@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #343a40, #343a40 70%, #f8f9fa 70%, #f8f9fa);
+    background: url('/imagenes/login.jpg') no-repeat center center fixed;
+    /* Agrega tu imagen de fondo */
+    background-size: cover;
+    /* Ajusta la imagen de fondo */
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin-top: 50px;
+    /* Margen superior */
+}
+
+.login-container {
+    width: 400px;
+    background: rgba(255, 255, 255, 0.8);
+    /* Hacemos el fondo semi-transparente */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    /* Cambiamos el tipo de letra */
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: calc(100% - 24px);
+    padding: 12px;
+    background: linear-gradient(to right, #846da2, #36689e);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #0056b3, #003d6b);
+}
