@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Comercialización de Libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="imagenes/iconolibro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Encabezado y menú de navegación -->
+    <nav class="flex justify-between bg-gray-800 text-white p-4">
+        <div>
+            <a href="index.html" class="text-xl font-bold">Portal de libros</a>
+            <!-- Enlace a la página de inicio -->
+        </div>
+        <div class="flex items-center">
+            <a href="adminlibros.html" class="ml-4">Libros</a>
+            <a href="autores.html" class="ml-4">Autores</a>
+            <a href="categorias.html" class="ml-4">Categorías</a>
+            <a href="nosotros.html" class="ml-4">Nosotros</a>
+            <a href="contacto.html" class="ml-4">Contacto</a>
+        </div>
+        <div id="loginContainer">
+            <!-- Aquí debería estar el botón de inicio de sesión -->
+            <a href="login.html" class="ml-4 flex items-center">
+                <span class="mr-2">Login</span>
+                <img src="/imagenes/usuariologin.png" alt="Login" class="w-6 h-6">
+            </a>
+        </div>
+    </nav>
+
+
+    <!-- Hero section con imagen de fondo -->
+    <div class="bg-cover bg-center h-96" style="background-image: url('imagenes/fondo.jpg');">
+        <div class="flex items-center justify-center h-full">
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+                <h1 class="text-4xl font-bold mb-2 text-white">Bienvenidos a Nuestra Librería</h1>
+                <p class="text-xl text-white">Explora nuestra amplia colección de libros.</p>
+                <a href="libros.html" class="mt-4 inline-block bg-purple-800 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded">
+                    Ver Libros
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Sección de características -->
+    <div class="container mx-auto mt-4 px-4" style="margin-bottom: 60px;">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Feature 1 -->
+            <div class="bg-purple-100 rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-semibold mb-2">Variedad de Géneros</h2>
+                <p>Desde novelas clásicas hasta las últimas novedades en ciencia ficción y más.</p>
+
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-purple-100 rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-semibold mb-2">Calidad Garantizada</h2>
+                <p>Todos nuestros libros son seleccionados cuidadosamente para asegurar su calidad.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="bg-purple-100 rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-semibold mb-2">Soporte al Cliente</h2>
+                <p>Contamos con un equipo dispuesto a ayudarte a encontrar el libro que buscas.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <div>
+
+        <footer class="bg-gray-800 text-white py-4 ">
+
+            <div class="mt-4 text-center text-gray-400 ">© 2024 Portal de Libros. Todos los derechos reservados.</div>
+        </footer>
+    </div>
+    <!-- Archivo de JavaScript -->
+    <script src="auth.js"></script>
+
+
+    <script>
+        // Verifica si el usuario ha iniciado sesión
+        var usuarioAutenticado = localStorage.getItem('usuarioAutenticado');
+
+        if (usuarioAutenticado === 'true') {
+            // Obtiene el nombre de usuario desde el localStorage
+            var nombreUsuario = localStorage.getItem('nombreUsuario');
+            // Muestra el nombre de usuario y el botón de cierre de sesión
+            var userContainer = document.getElementById('userContainer');
+            userContainer.innerHTML = `
+            <span class="text-gray-300 mr-2">Bienvenido, ${nombreUsuario}</span>
+            <button onclick="cerrarSesion()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                Cerrar Sesión
+            </button>
+        `;
+        }
+    </script>
+
+</body>
+
+</html>

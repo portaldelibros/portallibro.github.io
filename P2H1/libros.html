@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros - Comercialización de Libros</title>
+    <!-- Estilos Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="imagenes/iconolibro.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Encabezado y menú de navegación -->
+    <nav class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-xl font-bold">Portal de libros</a>
+            <div class="flex items-center">
+                <a href="libros.html" class="ml-4">Libros</a>
+
+            </div>
+            <!-- Aquí se mostrará la imagen de usuario y su nombre después de iniciar sesión -->
+            <div id="userContainer">
+                <!-- Aquí se mostrará el nombre de usuario y el botón de cierre de sesión después de iniciar sesión -->
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto mt-8 px-4">
+        <h1 class="text-3xl font-bold mb-8 text-center">Portal de libros</h1>
+        <!-- Lista de libros -->
+        <div id="listaLibros" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+            <!-- Tarjetas de libros se generarán aquí -->
+        </div>
+
+        <!-- Tarjeta adicional para agregar un nuevo libro -->
+        <div class="bg-gray-200 rounded-lg shadow-md overflow-hidden flex justify-center items-center cursor-pointer" onclick="mostrarFormulario()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 0 1 1 1v5h5a1 1 0 0 1 0 2h-5v5a1 1 0 0 1-2 0v-5H5a1 1 0 0 1 0-2h5V4a1 1 0 0 1 1-1z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Contenedor para opciones de administrador -->
+    <div id="opcionesAdmin">
+        <!-- Botones de administrador -->
+        <div class="mt-4 flex justify-center">
+            <button id="botonEliminar" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="eliminarLibro()">Eliminar Libro</button>
+            <button id="botonEditar" class="ml-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onclick="editarLibro()">Editar Libro</button>
+        </div>
+    </div>
+
+    <!-- Formulario de agregar/editar libro -->
+    <div id="modalAgregarModificar">
+        <div class="modal-contenido">
+            <h2 class="text-xl font-semibold mb-4">Agregar/Editar libro</h2>
+            <form id="formularioLibro" onsubmit="guardarLibro(event)">
+                <input type="hidden" id="indiceLibro" name="indiceLibro">
+                <div class="mb-4">
+                    <label for="imagen" class="block text-gray-700 font-bold mb-2">Imagen (URL)</label>
+                    <input type="text" id="imagen" name="imagen" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" required>
+                </div>
+                <div class="mb-4">
+                    <label for="titulo" class="block text-gray-700 font-bold mb-2">Título</label>
+                    <input type="text" id="titulo" name="titulo" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" required>
+                </div>
+                <div class="mb-4">
+                    <label for="autor" class="block text-gray-700 font-bold mb-2">Autor</label>
+                    <input type="text" id="autor" name="autor" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" required>
+                </div>
+                <div class="mb-4">
+                    <label for="genero" class="block text-gray-700 font-bold mb-2">Género</label>
+                    <input type="text" id="genero" name="genero" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" required>
+                </div>
+                <div class="mb-4">
+                    <label for="descripcion" class="block text-gray-700 font-bold mb-2">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100" required></textarea>
+                </div>
+                <!-- Otros campos del formulario -->
+                <div class="flex justify-between">
+                    <button type="button" onclick="cerrarModal()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                Cancelar
+            </button>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Guardar
+            </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Archivo de JavaScript -->
+    <script src="libros.js"></script>
+
+    <!-- Capa para mostrar la descripción del libro -->
+    <div id="descripcionOverlay" class="descripcion-overlay">
+        <div class="modal-contenido descripcion-box">
+            <h2 id="tituloDescripcion"></h2>
+            <p id="descripcionTexto"></p>
+            <button onclick="cerrarDescripcion()" class="mt-4 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            Cerrar
+        </button>
+        </div>
+    </div>
+
+    <!-- Script para manejar la visibilidad de las opciones de administrador -->
+    <script>
+        // Función para mostrar u ocultar las opciones de administrador según el tipo de usuario
+        function mostrarOpcionesAdmin(esAdmin) {
+            const opcionesAdmin = document.getElementById('opcionesAdmin');
+            if (esAdmin) {
+                opcionesAdmin.style.display = 'block'; // Mostrar opciones de administrador
+            } else {
+                opcionesAdmin.style.display = 'none'; // Ocultar opciones de administrador
+            }
+        }
+
+        // Llamada a la función para mostrar u ocultar las opciones de administrador
+        // Aquí deberías verificar si el usuario está autenticado como administrador
+        // Puedes hacerlo mediante un sistema de autenticación o guardando un indicador de administrador en el sessionStorage o localStorage
+        // Por ahora, vamos a simular que el usuario es administrador
+        const esAdmin = true; // Simulación de usuario administrador
+        mostrarOpcionesAdmin(esAdmin);
+    </script>
+    <!-- Archivo de JavaScript -->
+    <script src="auth.js"></script>
+
+
+    <script>
+        // Verifica si el usuario ha iniciado sesión
+        var usuarioAutenticado = localStorage.getItem('usuarioAutenticado');
+
+        if (usuarioAutenticado === 'true') {
+            // Obtiene el nombre de usuario desde el localStorage
+            var nombreUsuario = localStorage.getItem('nombreUsuario');
+            // Muestra el nombre de usuario y el botón de cierre de sesión
+            var userContainer = document.getElementById('userContainer');
+            userContainer.innerHTML = `
+            <span class="text-gray-300 mr-2">Bienvenido, ${nombreUsuario}</span>
+            <button onclick="cerrarSesion()" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">
+                Cerrar Sesión
+            </button>
+        `;
+        }
+    </script>
+
+</body>
+
+</html>
